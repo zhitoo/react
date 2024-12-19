@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function Card(props) {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg">
@@ -31,4 +33,15 @@ function Card(props) {
   );
 }
 
+Card.propTypes = {
+  title: PropTypes.string,
+  content: PropTypes.string,
+  image: PropTypes.string,
+};
+
+Card.defaultProps = {
+  title: "",
+  content: "",
+  image: "",
+};
 export default Card;

@@ -6,7 +6,13 @@ function App() {
   return (
     <>
       <Header />
-      <Card />
+      <Card
+        image="./vite.svg"
+        title="ViteJS"
+        content="Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Voluptatibus quia, nulla! Maiores et perferendis eaque,
+            exercitationem praesentium nihil."
+      />
       <Footer />
     </>
   );

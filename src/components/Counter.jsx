@@ -33,7 +33,10 @@ function Counter() {
         onChange={(e) => handleCountInputChange(e)}
       />
       <p>Count: {count}</p>
-      <button className="ml-2" onClick={() => setCount(count + 1)}>
+      <button
+        className="ml-2"
+        onClick={() => setCount((prevCount) => prevCount + 1)}
+      >
         Increment
       </button>
       <button className="ml-2" onClick={() => setCount(count - 1)}>

@@ -1,3 +1,4 @@
+import Button from "./components/Button";
 import Card from "./components/Card";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -32,6 +33,7 @@ function App() {
             exercitationem praesentium nihil."
       />
       <List items={items} />
+      <Button />
       <Footer />
     </>
   );

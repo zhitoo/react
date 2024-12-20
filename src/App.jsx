@@ -3,6 +3,7 @@ import Card from "./components/Card";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import List from "./components/List";
+import Counter from "./components/Counter";
 
 function App() {
   const items = [
@@ -34,6 +35,7 @@ function App() {
       />
       <List items={items} />
       <Button />
+      <Counter />
       <Footer />
     </>
   );

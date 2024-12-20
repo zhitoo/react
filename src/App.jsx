@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import List from "./components/List";
 import Counter from "./components/Counter";
+import ColorPicker from "./components/ColorPicker";
 
 function App() {
   const items = [
@@ -26,16 +27,7 @@ function App() {
   return (
     <>
       <Header />
-      <Card
-        image="./vite.svg"
-        title="ViteJS"
-        content="Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Voluptatibus quia, nulla! Maiores et perferendis eaque,
-            exercitationem praesentium nihil."
-      />
-      <List items={items} />
-      <Button />
-      <Counter />
+      <ColorPicker />
       <Footer />
     </>
   );

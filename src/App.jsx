@@ -10,54 +10,50 @@ import { useState } from "react";
 import MyComponent from "./components/MyComponent";
 
 function App() {
-  const items = [
+  const [tasks, setTasks] = useState([
     {
       id: 1,
-      name: "Lesson One",
-      shortDescription: "some description about lesson one",
+      description: "this is my first task",
+      done: true,
     },
     {
       id: 2,
-      name: "Lesson Two",
-      shortDescription: "some description about lesson one",
+      description: "this is my second task",
+      done: false,
     },
-    {
-      id: 3,
-      name: "Lesson Three",
-      shortDescription: "some description about lesson one",
-    },
-  ];
-  const [names, setNames] = useState(["Ali", "Reza", "Hasan"]);
-
-  const handleAddName = () => {
-    const newName = document.getElementById("nameInput").value;
-    document.getElementById("nameInput").value = "";
-    setNames((oldNames) => [...oldNames, newName]); // push new name to the array
+  ]);
+  const handleToggleDoneTask = (id) => {
+    setTasks((oldTasks) => {
+      return oldTasks.map((task) => {
+        console.log(task);
+        if (task.id == id) {
+          task.done = !task.done;
+        }
+        return task;
+      });
+    }); // update the state
   };
-  const handleRemoveName = (index) => {
-    setNames((oldNames) => oldNames.filter((_, i) => i !== index));
-  };
-
   return (
     <>
+      <div className="flext flex-row">
+        {tasks.map((task, index) => {
+          return (
+            <div className="flex " key={task.id}>
+              <div>{task.description}</div>
+              <div
+                onClick={() => handleToggleDoneTask(task.id)}
+                className="ml-2  border-solid border-2 border-sky-500 rounded-md p-1 cursor-pointer"
+              >
+                {task.done ? "Not Done" : "Done"}
+              </div>
+              <div className="ml-2 border-solid border-2 border-sky-500 rounded-md p-1 cursor-pointer">
+                Remove
+              </div>
+            </div>
+          );
+        })}
+      </div>
       <Header />
-      <MyComponent />
-      <ul>
-        {names.map((name, index) => (
-          <li
-            onClick={() => {
-              handleRemoveName(index);
-            }}
-            key={index}
-          >
-            {name}
-          </li>
-        ))}
-      </ul>
-      <input type="text" id="nameInput" placeholder="Enter Your Name" />
-      <button onClick={handleAddName}>Add Name To List</button>
-      <Form />
-      <ColorPicker />
       <Footer />
     </>
   );

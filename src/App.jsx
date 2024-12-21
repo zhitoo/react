@@ -7,6 +7,7 @@ import Counter from "./components/Counter";
 import ColorPicker from "./components/ColorPicker";
 import Form from "./components/Form";
 import { useState } from "react";
+import MyComponent from "./components/MyComponent";
 
 function App() {
   const items = [
@@ -40,6 +41,7 @@ function App() {
   return (
     <>
       <Header />
+      <MyComponent />
       <ul>
         {names.map((name, index) => (
           <li

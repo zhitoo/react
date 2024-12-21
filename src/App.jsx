@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import List from "./components/List";
 import Counter from "./components/Counter";
 import ColorPicker from "./components/ColorPicker";
+import Form from "./components/Form";
 
 function App() {
   const items = [
@@ -27,6 +28,7 @@ function App() {
   return (
     <>
       <Header />
+      <Form/>
       <ColorPicker />
       <Footer />
     </>

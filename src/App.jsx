@@ -23,16 +23,9 @@ function App() {
     },
   ]);
   const handleToggleDoneTask = (id) => {
-    setTasks((oldTasks) => {
-      return oldTasks.map((task) => {
-        console.log(task);
-        if (task.id == id) {
-          task.done = !task.done;
-        }
-        return task;
-      });
-    }); // update the state
+    setTasks((p) => p.map((t) => (t.id == id ? { ...t, done: !t.done } : t)));
   };
+
   return (
     <>
       <div className="flext flex-row">
